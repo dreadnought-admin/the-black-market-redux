@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  album_name: MyString
+  artist_name: MyString
+  condition: MyString
+  genre: MyString
+  release_date: MyString
+  release_description: MyString
+  record_labels: MyString
+  spotify_link: MyString
+  price: 1
+  is_sold: false
+
+two:
+  user: two
+  album_name: MyString
+  artist_name: MyString
+  condition: MyString
+  genre: MyString
+  release_date: MyString
+  release_description: MyString
+  record_labels: MyString
+  spotify_link: MyString
+  price: 1
+  is_sold: false
