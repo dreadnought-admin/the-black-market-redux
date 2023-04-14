@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       end 
     end 
 
-  
+    # Leftover for Admin accessibility
     def destroy
       @current_user.destroy
       head :no_content
@@ -37,6 +37,6 @@ class UsersController < ApplicationController
   private 
 
   def user_params
-      params.permit(:username, :password, :email, :paypal_handle, :twitter_handle, :instagram_handle, :country, :avatar )
+      params.permit(:username, :password, :email, :instagram_handle, :country, :avatar )
   end 
 end

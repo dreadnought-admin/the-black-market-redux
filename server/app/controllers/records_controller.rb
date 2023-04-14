@@ -37,7 +37,7 @@ class RecordsController < ApplicationController
     end 
 
     def randomized_records
-        render json: Record.limit(5).order("RANDOM()")
+        render json: Record.limit(6).order("RANDOM()")
     end
 
     private

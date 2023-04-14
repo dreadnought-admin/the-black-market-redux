@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+    # Begins basic authentication check
     include ActionController::Cookies
     
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
