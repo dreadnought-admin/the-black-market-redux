@@ -1,8 +1,16 @@
-import React from 'react'
+import { useState, useContext } from 'react'
+import { RecordsContext } from '../global/RecordsProvider';
+import { Link } from 'react-router-dom'
 
 const RecordList = () => {
+
+  const { records, setRecords } = useContext(RecordsContext);
+
+  console.log(records);
+
+
   return (
-    <div>RecordList</div>
+    <div>This is the RecordList</div>
   )
 }
 
