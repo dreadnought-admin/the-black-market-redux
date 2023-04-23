@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
     before_action :authorized_user
     skip_before_action :authorized_user, only: [:current_user]
+    skip_before_action :verify_authenticity_token
 
     # Checks whether the current session involves a user with an authorized account
     def current_user

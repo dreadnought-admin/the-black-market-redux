@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorized_user, only: [:create]
+    skip_before_action :authorized_user, only: [:create, :show]
     wrap_parameters format: []
 
     def index
@@ -14,8 +14,8 @@ class UsersController < ApplicationController
   
     # /signup route
     def create
-      user = User.create!(user_params)
-        session[:user_id] = user.id 
+      user = User.create(user_params)
+        session[:user_id] = user.id
         render json: user, status: :created
     end
 
@@ -37,6 +37,6 @@ class UsersController < ApplicationController
   private 
 
   def user_params
-      params.permit(:username, :password, :email, :instagram_handle, :country, :avatar )
+      params.permit(:password, :email, :username)
   end 
 end

@@ -1,10 +1,10 @@
 class SessionsController < ApplicationController
-    skip_before_action :authorized_user, only: [:create]
-    before_action :set_current_shopping_cart
+    skip_before_action :authorized_user, only: [:create, :destroy]
+    # before_action :set_current_shopping_cart
     
     # /login route
     def create
-      user = User.find_by(username: params[:username])
+      user = User.find_by(email: params[:email])
       if user&.authenticate(params[:password])
         session[:user_id] = user.id
         
