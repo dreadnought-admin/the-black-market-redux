@@ -18,10 +18,10 @@ export interface User {
     username: string;
     password_digest: string;
     email: string;
-    bio: string;
-    instagram_handle: string;
-    country: string;
-    avatar: string; 
+    // bio: string;
+    // instagram_handle: string;
+    // country: string;
+    // avatar: string; 
 }
 
 export interface Comment {

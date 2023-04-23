@@ -8,14 +8,14 @@ import {
 import { User } from "../types";
 
 interface UserContextValue {
-  user: User | null;
-  setUser: Dispatch<SetStateAction<User | null>>;
+  user: User | boolean;
+  setUser: Dispatch<SetStateAction<boolean>>;
   userLoaded: boolean;
   setUserLoaded: Dispatch<SetStateAction<boolean>>;
 }
 
 const UserContext = createContext<UserContextValue>({
-  user: null,
+  user: false,
   setUser: () => {},
   userLoaded: false,
   setUserLoaded: () => {},
@@ -26,20 +26,9 @@ interface UsersProviderProps {
 }
 
 const UserProvider: React.FC<UsersProviderProps> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState(false);
 
   const [userLoaded, setUserLoaded] = useState(false);
-
-  useEffect(() => {
-    fetch(`http://localhost:3000/authorized_user`)
-      .then((r) => r.json())
-      .then((user) => {
-        updateUser(user);
-        if (user) setUserLoaded(true);
-      });
-  }, []);
-
-  const updateUser = (user: any) => setUser(user);
 
   return (
     <UserContext.Provider value={{ user, setUser, userLoaded, setUserLoaded }}>

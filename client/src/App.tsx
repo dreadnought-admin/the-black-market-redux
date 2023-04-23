@@ -1,9 +1,9 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
-import { UserProvider } from './global/UserProvider';
+import { UserContext } from './global/UserProvider';
 import { RecordsProvider } from './global/RecordsProvider';
 import { CartProvider } from './global/CartsProvider';
 
@@ -27,8 +27,8 @@ import EditUserProfile from './components/EditUserProfile'
 import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
+
   return (
-    <UserProvider>
       <RecordsProvider>
         <CartProvider>
 
@@ -84,19 +84,17 @@ const App = () => {
           element={<RecordDetail/>}
           />
 
-          {/* <ProtectedRoute path="/profile">
-            <UserProfile />
-          </ProtectedRoute>
+          {/* {user && (
+            <Route path="/profile"
+            element={<UserProfile/>}
+            />
+          )} */}
 
-          <ProtectedRoute path="/new_sale">
-            <NewRecordForm />
-          </ProtectedRoute> */}
 
         </Routes>
         <Footer/>
         </CartProvider>
       </RecordsProvider>
-    </UserProvider>
   )
 }
 
