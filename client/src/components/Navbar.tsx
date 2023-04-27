@@ -1,4 +1,4 @@
-import { useContext, useEffect  } from 'react';
+import { useContext, useEffect, useState  } from 'react';
 import { UserContext } from '../global/UserProvider';
 import { useNavigate, NavLink, Link } from 'react-router-dom';
 
@@ -16,7 +16,11 @@ const Navbar = () => {
 
   const updateUser = (currentuser: any) => setUser(currentuser);
 
-  console.log(user)
+  // const [credentials, setCredentials] = useState({
+  //   username: user?.username,
+  //   email: user?.email,
+  //   password_digest: "",
+  // });
 
   const navigate = useNavigate();
 
@@ -35,7 +39,7 @@ const Navbar = () => {
   return (
     <div>
       <span>
-        <img src="#" alt="logo"></img>
+        {/* <img src="#" alt="logo"></img> */}
       </span>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/about">About</NavLink>
@@ -54,9 +58,9 @@ const Navbar = () => {
         <NavLink to="/cart">Your Cart</NavLink>
       )}
 
-      {user && (
-        <NavLink to="/profile">Welcome back</NavLink>
-      )}
+      {user? (
+        <NavLink to="/profile">Welcome Back, {user.username}</NavLink>
+      ): null}
 
       {user && (
         <NavLink onClick={handleLogout} to="/">Logout</NavLink>

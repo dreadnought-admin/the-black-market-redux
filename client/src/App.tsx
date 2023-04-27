@@ -28,6 +28,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
 
+  const { user } = useContext(UserContext);
+
   return (
       <RecordsProvider>
         <CartProvider>
@@ -84,11 +86,11 @@ const App = () => {
           element={<RecordDetail/>}
           />
 
-          {/* {user && (
+          {user? (
             <Route path="/profile"
             element={<UserProfile/>}
             />
-          )} */}
+          ) : null}
 
 
         </Routes>

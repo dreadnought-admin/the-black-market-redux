@@ -13,7 +13,7 @@ const SignUp = () => {
     password: ""
   });
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setCredentials((prevCredentials) => {
@@ -47,7 +47,7 @@ const SignUp = () => {
   return (
     <main className="signup-container fade-in-fwd">
       <h2>
-        sign up for <span className="logo-small">introspect.</span>
+        sign up for <span className="logo-small">The Black Market.</span>
       </h2>
       <form className="signup-form card" onSubmit={handleSubmit}>
         
