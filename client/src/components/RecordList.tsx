@@ -20,29 +20,6 @@ const RecordList = () => {
 
   return (
     <div>
-      <h2>Reocrd List</h2>
-
-      <div className="sort-filter-select">
-        <select
-          name="filter"
-          onChange={(e) => setSelectedFilter(e.target.value)}
-        >
-          <option value="all">all</option>
-          <option value="day">last day</option>
-          <option value="week">last week</option>
-          <option value="month">last month</option>
-        </select>
-
-        <select
-          className="sort-select"
-          name="sort"
-          onChange={(e) => setSelectedSort(e.target.value)}
-        >
-          <option value="descending">descending</option>
-          <option value="ascending">ascending</option>
-        </select>
-      </div>
-
       <section>
         {records ? records.map((record) => (
           <RecordCard
@@ -54,8 +31,6 @@ const RecordList = () => {
         )) : null}
         {records && records.length ? null : <p>no data available</p>}
       </section>
-
-
     </div>
   )
 }

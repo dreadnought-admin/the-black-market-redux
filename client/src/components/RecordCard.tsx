@@ -12,20 +12,29 @@ import { RecordsContext } from '../global/RecordsProvider';
 
   const RecordCard: React.FC<RecordProps> = ({ record, records, setRecords }) => {
 
-    const [filler, setFiller] = useState(false);
-
     function handleRecordDelete(id: number) {
       const updatedRecords = records.filter((ogRecord) => ogRecord.id !== id);
       setRecords(updatedRecords);
     }
 
+
   return (
     <div>
-        {record.album_name ? (
         <span>
-          {record.album_name}
+          {record.album_cover ? (
+            <img height="75x" width="75px" src={record.album_cover}></img>
+          ) : <p>Loading...</p>
+          }
+
+          <br/>
+
+          {record.album_name ? (
+            <span>
+              {record.album_name}
+            </span>
+            ) : null
+          }
         </span>
-        ): null}
     </div>
   )
 }

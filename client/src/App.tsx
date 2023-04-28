@@ -37,6 +37,8 @@ const App = () => {
         <Navbar/>
 
         <Routes>
+          
+
 
           <Route path="/signup"
           element={<Signup/>}
@@ -67,7 +69,7 @@ const App = () => {
 
           <Route path="/records"
           element={<>
-          <Search />
+          {/* <Search /> */}
           <RecordList />
           </>}
           />
