@@ -16,6 +16,8 @@ const Navbar = () => {
 
   const updateUser = (currentuser: any) => setUser(currentuser);
 
+  console.log(user)
+
   // const [credentials, setCredentials] = useState({
   //   username: user?.username,
   //   email: user?.email,

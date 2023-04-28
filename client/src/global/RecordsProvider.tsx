@@ -35,8 +35,8 @@ const RecordsProvider: React.FC<RecordsProviderProps> = ({ children }) => {
   const fetchRecords = () => {
     fetch(`http://localhost:3000/records`)
     .then((r) => r.json())
-    .then((records) => {
-      setRecords(records);
+    .then((recordsFromServer) => {
+      setRecords(recordsFromServer);
       setRecordsLoaded(true);
     })
   }

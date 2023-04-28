@@ -8,7 +8,8 @@ export interface Record {
     release_date: string;
     release_description: string;
     record_labels: string;
-    spotify_link: string;
+    spotify_link?: string;
+    created_at: string;
     price: number; 
     user: User
 }
@@ -31,6 +32,12 @@ export interface Comment {
 }
 
 export interface Cart {
+    id: number;
+    user_id: number;
+    record_id: number;
+}
+
+export interface Watch {
     id: number;
     user_id: number;
     record_id: number;
