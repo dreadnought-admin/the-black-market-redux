@@ -19,14 +19,12 @@ const Home = () => {
           <button>🦇</button>
         </a>
 
-        <a target="_blank" href="">
-          <h2>New Here?</h2><Link to="/signup">Sign Up</Link>
-        </a>
+        <h2>New Here?</h2><Link to="/signup">Sign Up</Link>
 
-        <a target="_blank" href="">
-          <h2>Returning User?</h2>
-          <Link to="/login">Login</Link>
-        </a>
+        
+        <h2>Returning User?</h2>
+        <Link to="/login">Login</Link>
+
       </div>
     </div>
   )

@@ -28,7 +28,13 @@ const RecordDetail: React.FC = () => {
 
   return (
     <section>
-      <p>{album_name}</p>
+      <img alt="album cover" height="400" width="400px" src={album_cover}/>
+      <h2>{album_name}</h2>
+      <h3>{artist_name}</h3>
+      <div>
+        <p>{release_description}</p>
+        <p>${price}</p>
+      </div>
     </section>
   )
 }
