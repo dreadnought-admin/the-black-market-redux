@@ -1,4 +1,4 @@
-import { Link  } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { SetStateAction, Dispatch, useState, useContext } from 'react';
 import { Record as RecordType} from '../types';
 import { RecordsContext } from '../global/RecordsProvider';
@@ -12,6 +12,8 @@ import { RecordsContext } from '../global/RecordsProvider';
 
   const RecordCard: React.FC<RecordProps> = ({ record, records, setRecords }) => {
 
+    let navigate = useNavigate();
+
     function handleRecordDelete(id: number) {
       const updatedRecords = records.filter((ogRecord) => ogRecord.id !== id);
       setRecords(updatedRecords);
@@ -21,7 +23,7 @@ import { RecordsContext } from '../global/RecordsProvider';
   return (
     <div>
         <span>
-        <Link to={`http://localhost:3000/records/${record!.id}`}>
+        <Link to={`http://localhost:5173/records/${record!.id}`}>
           {record.album_cover ? (
             <img height="75x" width="75px" src={record.album_cover}></img>
           ) : <p>Loading...</p>
